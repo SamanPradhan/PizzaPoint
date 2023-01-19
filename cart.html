@@ -2,18 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominos</title>
-
-    <link rel="stylesheet" href="index.css">
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css">
 </head>
 
 <body>
     <div id="nav">
-        <img href="menu.html" id="logo-img" src="images/logo.png" alt="logo">
+        <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
         <div id="menu">
             <h2 onclick="window.location.href='menu.html';">ORDER ONLINE</h2>
             <h2 onclick="window.location.href='menu.html';">MENU</h2>
@@ -27,8 +25,7 @@
 
         </div>
         <div onclick="window.location.href='sign-up.html';" id="sign-in">
-            <h1>SIGN IN </h1>
-            <button id="signout"></button>
+            <h3>SIGN IN & EARN REWARDS</h3>
         </div>
         <div onclick="window.location.href='cart.html';" id="cart">
             <img id="cart-icon" src="images/shopping-cart.png" alt="">
@@ -36,74 +33,30 @@
         </div>
 
     </div>
-
-
     <br><br><br><br><br>
 
-
     <div id="body">
-        <div onclick="window.location.href='menu.html';" id="slideshow">
 
-        </div>
-        <div onclick="window.location.href='menu.html';" id="start-order">
-            <div>
-                <hr>
-            </div>
-            <h1>START YOUR ORDER</h1>
-            <button onclick="window.location.href='menu.html';">DELIVERY</button>
-            <h2 style="color:grey;">or</h2>
-            <button onclick="window.location.href='menu.html';">CARRYOUT</button>
-            <div>
-                <hr>
-            </div>
+    </div>
+    <div id="cont">
 
-        </div>
-        <div id="salesbar">
-            <img src="images/IMG_20230117_183453.jpg" alt="error">
-        </div>
-        <h1 id="heading-menu">Browse Our Menu</h1>
-        <div id="menu_grid">
+    </div>
+    <div id="cont">
+        <h1 id="total">Your Total cart Price is:- ₹<span id="cart-total">0</span></h1>
 
-            <div>
-                <img src="https://media.istockphoto.com/id/842082336/photo/homemade-veggie-pizza-with-mushrooms-peppers.jpg?s=612x612&w=0&k=20&c=op1vZnGjlB_c3w6Z-ohPo0wn4QveujVKZu4vTZCOWnc="
-                    alt="">
-                <h2>Veg Pizzas</h2>
-            </div>
-            <div><img src="https://static.toiimg.com/photo/53110049.cms" alt="">
-                <h2>Pizza Mania</h2>
 
-            </div>
-            <div><img
-                    src="https://media.istockphoto.com/id/1032111568/photo/square-crust-flatbread-pizza.jpg?s=612x612&w=0&k=20&c=yssQ1TkcUG_BOAARHuWyf0k1x-emNtlGICP0_FxY2m8="
-                    alt="">
-                <h2>
-                    Non Veg Pizzas
-                </h2>
-            </div>
-            <div>
-                <img src="https://i.insider.com/57d961d5077dcc3d018b5b9c?width=412&format=jpeg" alt="">
-                <h2> Sides</h2>
-            </div>
-            <div>
-                <img src="https://deliciousmadeeasy.com/wp-content/uploads/2015/01/pizza-dipping-sauce-720x720.jpg"
-                    alt="">
 
-                <h2> Dips</h2>
-            </div>
-
-            <div>
-                <img src="https://www.dominos.co.in//files/items/170046_BMC_image_for_Website_272X272.jpg" alt="">
-                <h2>Desserts</h2>
-            </div>
-        </div>
-        <div id="view-menu">
-            <img src="images/menu (1).png" alt="menu">
-            <button id="menu-btn">VIEW FULL MENU</button>
-
-        </div>
-        <br><br><br>
+        <button id="checkout" onclick="window.location.href='checkout.html';">Checkout Now</button>
     </div>
 
+
+
+
+    <div id="cart-container">
+
+        <!-- Here Append All the cart Products  -->
+    </div>
+    <br><br><br>
 
 
     <div id="footer1">
@@ -120,7 +73,7 @@
             <h3>Contact Us</h3>
             <h3>FAQs</h3>
             <h3>Culture</h3>
-            <h3>KDK Newsroom</h3>
+            <h3> Newsroom</h3>
 
 
             <h3>Our App</h3>
@@ -180,9 +133,9 @@
     </div>
 
 
-
 </body>
-<script src="index.js">
+<script src="cart.js">
+    // Write all necessery JS here 
 
 
 </script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="sign-up.css">
+</head>
+
+<body>
+
+
+
+    <div id="nav">
+        <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
+        <div id="menu">
+            <h2 onclick="window.location.href='menu.html';">ORDER ONLINE</h2>
+            <h2 onclick="window.location.href='menu.html';">MENU</h2>
+            <h2>COUPONS</h2>
+            <h2>TRACKER</h2>
+            <h2>REWARDS</h2>
+        </div>
+        <div id="location">
+            <img id="location-icon" src="images/location.png" alt="location">
+            <h3> VIEW YOUR LOCAL PIZZAKING</h3>
+
+        </div>
+        <div onclick="window.location.href='sign-up.html';" id="sign-in">
+            <h3>SIGN IN & EARN REWARDS</h3>
+        </div>
+        <div onclick="window.location.href='cart.html';" id="cart">
+            <img id="cart-icon" src="images/shopping-cart.png" alt="">
+            <h3>CART</h3>
+        </div>
+
+    </div>
+    <br><br><br><br><br><br>
+
+
+    <form id="signup_form">
+        <h2 class="create-account">CREATE AN ACCOUNT</h2>
+
+        <label>
+            <h3>First Name</h3>
+        </label>
+        <input id="first_name" required type="text" placeholder="First Name" />
+
+        <label>
+            <h3>Last Name</h3>
+        </label>
+        <input id="last_name" type="text" placeholder="Last Name" />
+
+        <label>
+            <h3>Email</h3>
+        </label>
+        <input id="email" type="text" placeholder="Email" />
+        <p id="wrong_email"></p>
+        <label>
+            <h3>Password</h3>
+        </label>
+        <input id="password" type="password" placeholder="Password" />
+
+        <ul>
+            <li><input class="check" type="checkbox" />By selecting the box, you agree to our Privacy Policy and Terms
+                of Use.</li>
+            <li><input class="check" type="checkbox" /> Sign up for Email updates and Promotions.</li>
+        </ul>
+        <p id="signup_successful"></p>
+        <input type="submit" value="Sign Up" />
+        <p>Already a member? <a href="log-in.html">Log In</a></p>
+    </form>
+
+    <br><br><br><br>
+</body>
+<script src="sign-up.js"></script>
+
+</html>
