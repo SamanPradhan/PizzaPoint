@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <div id="nav">
+        <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
+        <div id="menu">
+            <h2 onclick="window.location.href='menu.html';">ORDER ONLINE</h2>
+            <h2 onclick="window.location.href='menu.html';">MENU</h2>
+            <h2>COUPONS</h2>
+            <h2>TRACKER</h2>
+            <h2>REWARDS</h2>
+        </div>
+        <div id="location">
+            <img id="location-icon" src="images/location.png" alt="location">
+            <h3> VIEW YOUR LOCAL PIZZAKING</h3>
+
+        </div>
+        <div onclick="window.location.href='sign-up.html';" id="sign-in">
+            <h3>SIGN IN & EARN REWARDS</h3>
+        </div>
+        <div onclick="window.location.href='cart.html';" id="cart">
+            <img id="cart-icon" src="images/shopping-cart.png" alt="">
+            <h3>CART</h3>
+        </div>
+
+    </div>
+    <br><br><br><br><br>
+
+    <a href="cart.html"><button id="back-button">Back</button></a>
+    <div id="form-div">
+        <form>
+            <h1>CHECKOUT</h1>
+            <label>Address</label>
+            <input type="text">
+            <label>Card Number</label>
+            <input type="number">
+            <label>Cardholder Name</label>
+            <input type="text">
+            <label>Expiry Date</label>
+            <input type="date">
+            <label>CVV</label>
+            <input type="number">
+            <div id="confirm-div">
+                <button id="confirm-button"><a href="thankyouPage.html">Confirm Payment</a></button>
+            </div>
+        </form>
+
+
+    </div>
+
+</body>
+<script src="checkout.js"></script>
+
+</html>

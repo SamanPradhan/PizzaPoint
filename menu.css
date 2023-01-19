@@ -252,12 +252,13 @@ body {
 
 #filter-box input {
   width: 210px;
-  height: 40px;
+  height: 20px;
   font-size: 20px;
   border-radius: 7px;
   border-color: rgb(0, 0, 0);
   text-decoration: none;
-  text-align: center;
+  text-align: left;
+  padding: 10px;
 }
 #filter-box select {
   font-size: 20px;
@@ -267,7 +268,10 @@ body {
 #filter-box p {
   padding: 20px;
 }
-#product-container {
+#product-container,
+#beverage-container,
+#desserts-container,
+#Sides-container {
   /* border: 2px solid red; */
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
@@ -276,7 +280,10 @@ body {
   justify-content: center;
 }
 
-#product-container > div {
+#product-container > div,
+#beverage-container > div,
+#desserts-container > div,
+#Sides-container > div {
   /* border: 2px solid red; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px;
@@ -284,14 +291,32 @@ body {
   text-align: center;
 }
 
-#product-container > div > img {
+#product-container > div > img,
+#beverage-container > div > img,
+#desserts-container > div > img,
+#Sides-container > div > img {
   height: 250px;
   width: 100%;
 }
-#product-container > div > h2:nth-child(2) {
+
+#product-container > div > img:hover,
+#beverage-container > div > img:hover,
+#desserts-container > div > img:hover,
+#Sides-container > div > img:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+#product-container > div > h2:nth-child(2),
+#beverage-container > div > h2:nth-child(2),
+#desserts-container > div > h2:nth-child(2),
+#Sides-container > div > h2:nth-child(2) {
   height: 60px;
 }
-#product-container > div > button {
+#product-container > div > button,
+#beverage-container > div > button,
+#desserts-container > div > button,
+#Sides-container > div > button {
   font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -315,6 +340,67 @@ body {
   transition: box-shadow 0.3s linear 0s;
 }
 
-#product-container > div > button:hover {
+#product-container > div > button:hover,
+#beverage-container > div > button:hover,
+#desserts-container > div > button:hover,
+#Sides-container > div > button:hover {
   background-color: rgb(145, 3, 24);
+}
+#product-container > div > h2,
+#beverage-container > div > h2,
+#desserts-container > div > h2,
+#Sides-container > div > h2 {
+  font-family: One Dot Condensed Bold, Arial Narrow, Arial, Helvetica,
+    sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #006491;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 0 0.25em;
+  padding-top: 0.25em;
+  text-transform: uppercase;
+  outline: 0;
+}
+.menu-top-heading {
+  font-family: One Dot Condensed Bold, Arial Narrow, Arial, Helvetica,
+    sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(31, 31, 31);
+  font-size: 2.58065em;
+  line-height: 1;
+  margin: 0 0 0.25em;
+  padding-top: 0.25em;
+  text-transform: uppercase;
+  outline: 0;
+
+  padding: 0px 105px 0px 105px;
+}
+.menu-top-body {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font: bold 15px/1 Arial, Helvetica, sans-serif;
+  padding: 0px 105px 0px 105px;
+  color: #006491;
+}
+.menu-heading {
+  font-family: One Dot Condensed Bold, Arial Narrow, Arial, Helvetica,
+    sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 5px;
+  font-size: 20px;
+  background-color: #006491;
+  height: 30px;
+  color: #fff;
+  white-space: normal;
+}
+.menu-heading-div {
+  padding: 10px 105px 10px 105px;
 }
