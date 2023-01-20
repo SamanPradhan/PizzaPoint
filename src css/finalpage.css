@@ -1,0 +1,20 @@
+#thankyou_text {
+  font-size: 80px;
+  color: rgb(175, 0, 38);
+  text-align: center;
+}
+#orderconfirm_text {
+  font-size: 50px;
+  text-align: center;
+}
+body {
+  background-color: rgb(255, 215, 215);
+  /* border: 1px solid black; */
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}

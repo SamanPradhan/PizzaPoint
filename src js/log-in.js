@@ -7,7 +7,7 @@ let flag_signin = false;
 let form = document.getElementById("login-form");
 let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
-
+let login_successful = document.getElementById("login_successful");
 form.addEventListener("submit", (e) => {
   let email = emailInput.value;
   let password = passwordInput.value;
@@ -31,7 +31,9 @@ form.addEventListener("submit", (e) => {
       return;
     }
   }
-  alert("Invalid Details");
+  login_successful.innerText = "Invalid Details";
+  login_successful.style.color = "red";
+  login_successful.style.fontSize = "20px";
   console.log(flag_signin);
 });
 
@@ -41,3 +43,26 @@ if (JSON_flag_signin == true) {
   console.log(login_name);
   sign_in_icon.innerText = "Hi,  " + login_name;
 }
+
+let signin = document.getElementById("sign-in");
+let signout = document.getElementById("signout");
+if (JSON_flag_signin == true) {
+  signout.innerText = "Sign Out";
+  signin.style.fontSize = "14px";
+  signout.addEventListener("click", () => {
+    JSON_flag_signin = false;
+    login_name = "";
+  });
+}
+
+if (JSON_flag_signin != true) {
+  console.log(signout.innerText);
+  signout.style.backgroundColor = "rgb(0, 100, 145)";
+}
+signout.addEventListener("click", () => {
+  JSON_flag_signin = false;
+  login_name = "";
+  localStorage.setItem("login_flag", JSON.stringify(JSON_flag_signin));
+  localStorage.setItem("login_name", JSON.stringify(login_name));
+  window.location.href = "index.html";
+});

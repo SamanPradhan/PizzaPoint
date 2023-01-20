@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="src css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,13 +21,17 @@
             <h2>REWARDS</h2>
         </div>
         <div id="location">
-            <img id="location-icon" src="images/location.png" alt="location">
-            <h3> VIEW YOUR LOCAL PIZZAKING</h3>
+            <img onclick="window.location.href='menu.html';" id="location-icon" src="images/location.png"
+                alt="location">
+            <h3> VIEW YOUR LOCAL PIZZA TOWN</h3>
 
         </div>
-        <div onclick="window.location.href='sign-up.html';" id="sign-in">
-            <h3>SIGN IN & EARN REWARDS</h3>
+        <div onclick="window.location.href='log-in.html';" id="sign-in">
+            <h1>LOG IN </h1>
+
         </div>
+        <br> <br>
+        <h2 id="signout"></h2>
         <div onclick="window.location.href='cart.html';" id="cart">
             <img id="cart-icon" src="images/shopping-cart.png" alt="">
             <h3>CART</h3>
@@ -50,7 +55,7 @@
             <label>CVV</label>
             <input type="number">
             <div id="confirm-div">
-                <button id="confirm-button"><a href="thankyouPage.html">Confirm Payment</a></button>
+                <button onclick="window.location.href='finalpage.html';" id="confirm-button">Confirm Payment</button>
             </div>
         </form>
 
@@ -58,6 +63,6 @@
     </div>
 
 </body>
-<script src="checkout.js"></script>
+<script src="src js/checkout.js"></script>
 
 </html>

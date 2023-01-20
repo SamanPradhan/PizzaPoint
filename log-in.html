@@ -6,33 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
-    <link rel="stylesheet" href="log-in.css">
+    <link rel="stylesheet" href="src css/log-in.css">
 </head>
 
 <body>
     <div id="nav">
         <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
         <div id="menu">
-            <h2 onclick="window.location.href='menu.html';">ORDER ONLINE</h2>
+
             <h2 onclick="window.location.href='menu.html';">MENU</h2>
-            <h2>COUPONS</h2>
+
             <h2>TRACKER</h2>
-            <h2>REWARDS</h2>
-        </div>
-        <div id="location">
-            <img id="location-icon" src="images/location.png" alt="location">
-            <h3> VIEW YOUR LOCAL PIZZAKING</h3>
 
         </div>
-        <div onclick="window.location.href='sign-up.html';" id="sign-in">
-            <h3>SIGN IN & EARN REWARDS</h3>
+        <div id="location">
+            <img onclick="window.location.href='menu.html';" id="location-icon" src="images/location.png"
+                alt="location">
+            <h3> VIEW YOUR LOCAL PIZZA TOWN</h3>
+
         </div>
+        <div onclick="window.location.href='log-in.html';" id="sign-in">
+            <h1>LOG IN </h1>
+
+        </div>
+        <br> <br>
+        <h2 id="signout"></h2>
         <div onclick="window.location.href='cart.html';" id="cart">
             <img id="cart-icon" src="images/shopping-cart.png" alt="">
             <h3>CART</h3>
         </div>
 
     </div>
+
+
     <br><br><br><br><br>
     <div id="sub_div">
 
@@ -54,12 +60,13 @@
                 By logging into the application or proceeding as a guest, you agree
                 to our <span>Privacy Policy</span> and <span>Terms of Use</span>.
             </p>
+            <p id="login_successful"></p>
             <input type="submit" value="Log In" />
             <p id="bottom-line-join-now">Don't have an account? <a href="sign-up.html">Join Now</a></p>
         </form>
     </div>
 
 </body>
-<script src="log-in.js"></script>
+<script src="src js/log-in.js"></script>
 
 </html>
