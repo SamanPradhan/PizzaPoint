@@ -1,31 +1,27 @@
 let CartArr = JSON.parse(localStorage.getItem("cart")) || [];
 console.log(CartArr);
-document.getElementById("cart-icon").src = "images/shopping-cart.png";
-if (CartArr !== Array[0]) {
-  console.log("yes");
-  document.getElementById("cart-icon").src = "images/shopping-cart-full.png";
-}
-let container = document.getElementById("cart-container");
+let tbody = document.querySelector("tbody");
+
 let total = document.getElementById("cart-total");
 Display(CartArr);
 
 function Display(CartArr) {
-  container.innerHTML = null;
+  tbody.innerHTML = null;
   CartArr.forEach((element) => {
-    let div = document.createElement("div");
-    let name = document.createElement("h2");
+    let tr = document.createElement("tr");
+    let name = document.createElement("td");
     let image = document.createElement("img");
-    let price = document.createElement("h2");
-
-    let div1 = document.createElement("div");
-    let Remove = document.createElement("button");
-    let Increment = document.createElement("button");
-    let Decrement = document.createElement("button");
+    let price = document.createElement("td");
+    let qnt = document.createElement("td");
+    let Remove = document.createElement("td");
+    let Increment = document.createElement("td");
+    let Decrement = document.createElement("td");
 
     name.innerText = element.name;
     image.setAttribute("src", element.image);
-    price.innerText = `Price: ₹ ${element.price}`;
-
+    image.setAttribute("id", "cart_image");
+    price.innerText = ` ₹ ${element.price}`;
+    qnt.innerText = element.quantity;
     Remove.textContent = "Remove";
     Increment.textContent = "+";
     Decrement.textContent = "-";
@@ -44,24 +40,26 @@ function Display(CartArr) {
       element.quantity++;
       total.innerText = +total.innerText + +element.price;
       localStorage.setItem("cart", JSON.stringify(CartArr));
-      alert("Product Added To Cart");
+      //alert("Product Added To Cart");
+      qnt.innerText = element.quantity;
     });
 
     Decrement.addEventListener("click", () => {
       if (element.quantity > 1) {
         element.quantity--;
         total.innerText = +total.innerText - +element.price;
-        alert("Product Removed from Cart");
+        //alert("Product Removed from Cart");
+        qnt.innerText = element.quantity;
         localStorage.setItem("cart", JSON.stringify(CartArr));
       } else {
-        alert("This is the last Product");
+        //alert("This is the last Product");
         localStorage.setItem("cart", JSON.stringify(CartArr));
         Display(data);
       }
     });
-    div1.append(Decrement, Remove, Increment);
-    div.append(image, name, price, div1);
-    container.append(div);
+
+    tr.append(name, image, price, qnt, Decrement, Remove, Increment);
+    tbody.append(tr);
   });
 
   let sum = 0;
@@ -80,3 +78,26 @@ if (JSON_flag_signin == true) {
   console.log(login_name);
   sign_in_icon.innerText = "Hi,  " + login_name;
 }
+
+let signin = document.getElementById("sign-in");
+let signout = document.getElementById("signout");
+if (JSON_flag_signin == true) {
+  signout.innerText = "Sign Out";
+  signin.style.fontSize = "14px";
+  signout.addEventListener("click", () => {
+    JSON_flag_signin = false;
+    login_name = "";
+  });
+}
+
+if (JSON_flag_signin != true) {
+  console.log(signout.innerText);
+  signout.style.backgroundColor = "rgb(0, 100, 145)";
+}
+signout.addEventListener("click", () => {
+  JSON_flag_signin = false;
+  login_name = "";
+  localStorage.setItem("login_flag", JSON.stringify(JSON_flag_signin));
+  localStorage.setItem("login_name", JSON.stringify(login_name));
+  window.location.href = "index.html";
+});

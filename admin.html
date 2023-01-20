@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="src css/cart.css">
+</head>
+
+<body>
+    <div id="nav">
+        <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
+        <div id="menu">
+
+            <h2 onclick="window.location.href='menu.html';">MENU</h2>
+
+            <h2>TRACKER</h2>
+
+        </div>
+        <div id="location">
+            <img onclick="window.location.href='menu.html';" id="location-icon" src="images/location.png"
+                alt="location">
+            <h3> VIEW YOUR LOCAL PIZZA TOWN</h3>
+
+        </div>
+        <div onclick="window.location.href='log-in.html';" id="sign-in">
+            <h1>LOG IN </h1>
+
+        </div>
+        <br> <br>
+        <h2 id="signout"></h2>
+        <div onclick="window.location.href='cart.html';" id="cart">
+            <img id="cart-icon" src="images/shopping-cart.png" alt="">
+            <h3>CART</h3>
+        </div>
+
+    </div>
+    <br><br><br><br><br><br>
+
+    <div id="body">
+
+    </div>
+    <div id="cont">
+
+    </div>
+    <div id="cont">
+        <h1 id="total">The Total Order value is:- ₹<span id="cart-total">0</span></h1>
+
+
+
+        <button id="checkout" onclick="window.location.href='checkout.html';">Checkout Now</button>
+    </div>
+
+
+    <div id="cart_container">
+
+        <table id="cart_table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>QTY.</th>
+                    <th>Remove</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <br><br><br>
+
+
+    <div id="footer1">
+        <div class="footer-list">
+            <h3>Find Coupons</h3>
+            <h3>Look at Our Menu </h3>
+            <h3>Our Gallery</h3>
+            <h3>Corporate Careers</h3>
+            <h3>Company Responsibipty</h3>
+            <h3>Read Our Blog</h3>
+        </div>
+        <div class="footer-list">
+            <h3>About Us</h3>
+            <h3>Contact Us</h3>
+            <h3>FAQs</h3>
+            <h3>Culture</h3>
+            <h3>Pizza Newsroom</h3>
+
+
+            <h3>Our App</h3>
+        </div>
+        <div><img src="images/logo.png" alt="logo"></div>
+        <div id="footer-signup">
+            <h1>Sign up Here</h1>
+            <input type="email" placeholder="Enter your email id">
+            <button onclick="window.location.href='sign-up.html';">Sign Up</button>
+        </div>
+
+    </div>
+
+</body>
+<script src="admin.js">
+
+
+
+</script>
+
+</html>

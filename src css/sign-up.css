@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(233, 233, 233);
 }
@@ -17,8 +23,8 @@ body {
   width: 100%;
 }
 #logo-img {
-  width: 100px;
-  height: 70px;
+  width: 70px;
+  height: 85px;
 }
 
 #menu > h2 {
@@ -51,7 +57,7 @@ body {
   color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 12px;
-
+  height: 45px;
   transition: box-shadow 0.3s linear 0s;
   -webkit-box-align: center;
   align-items: center;
@@ -67,16 +73,31 @@ body {
   width: 100px;
   font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
     sans-serif;
+
+  background: transparent;
+  background-color: rgb(1, 89, 129);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 9px;
+  margin: 0px;
+  text-align: center;
+  padding: 15px 20px 15px 20px;
+}
+
+#signout {
+  width: 90px;
+  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   background: transparent;
   background-color: rgb(1, 89, 129);
   color: rgb(255, 255, 255);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0px;
   transition: box-shadow 0.3s linear 0s;
   text-align: center;
-  padding: 15px 30px 15px 30px;
+  padding: 15px 20px 15px 20px;
 }
 
 #cart {
@@ -85,13 +106,14 @@ body {
   -webkit-box-pack: center;
   display: flex;
   justify-content: center;
-  line-height: 0px;
+  align-items: center;
+  line-height: 30px;
   height: 90px;
-  width: 70px;
-  text-decoration: none;
+  width: 120px;
+
   font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
     sans-serif;
-
+  padding-top: 10px;
   background: transparent;
 
   color: rgb(255, 255, 255);
@@ -145,10 +167,17 @@ body {
   padding: 70px 50px;
 }
 
+.bar {
+  width: 10px;
+  background-color: #d73333;
+  /* border: 1px solid violet; */
+  height: 25px;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 22px;
 }
 
 #wrong_email,
@@ -171,7 +200,10 @@ input[type="password"] {
 #small_font {
   font-size: 14px;
 }
-
+form p,
+label {
+  font-size: 20px;
+}
 label {
   color: #006491;
   font-weight: 600;
@@ -182,7 +214,7 @@ span {
 }
 
 form input[type="submit"] {
-  /* background-color: #dbdbdb; */
+  background-color: #dbdbdb;
   border-radius: 100px;
 
   color: black;
@@ -202,11 +234,11 @@ form input[type="submit"]:hover {
   color: white;
 }
 
-#login-form {
-  width: 500px;
+#signup_form {
+  width: 600px;
   background-color: white;
   margin: auto;
-  padding: 30px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -231,9 +263,6 @@ h3 {
   padding-top: 0.25em;
   text-transform: uppercase;
   outline: 0;
-}
-#bottom-line-join-now {
-  font-size: 120%;
 }
 @media screen and (max-width: 786px) {
   #login_div {

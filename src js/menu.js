@@ -1,7 +1,7 @@
 let api = "https://63c77a71e52516043f3eaecd.mockapi.io/Dominos";
 let api2 = "https://63c77a71e52516043f3eaecd.mockapi.io/beverage";
-let apidesserts = "https://63c82c4b075b3f3a91dbcb90.mockapi.io/desserts";
-let apiSides = "https://63c82c4b075b3f3a91dbcb90.mockapi.io/Sides";
+let apiSides = "https://63c82c4b075b3f3a91dbcb90.mockapi.io/desserts";
+let apidesserts = "https://63c82c4b075b3f3a91dbcb90.mockapi.io/Sides";
 
 let fetchdata = {};
 let fetchBevragedata = {};
@@ -109,30 +109,31 @@ function Display(data) {
     let name = document.createElement("h2");
     let image = document.createElement("img");
     let price = document.createElement("h2");
+    let cartadding = document.createElement("h2");
 
     let addToCart = document.createElement("button");
     name.innerText = element.name;
     image.setAttribute("src", element.image);
     price.innerText = `Price:  ₹${element.price}`;
 
-    addToCart.innerText = "Add to Cart";
+    addToCart.innerText = "ORDER NOW";
     addToCart.addEventListener("click", () => {
-      if (JSON_flag_signin === null) {
-        alert("Please Log in First");
+      if (JSON_flag_signin == false) {
+        cartadding.innerText = "Please Log in First";
       } else {
         if (duplicate(element) == false) {
           CartArr.push({ ...element, quantity: 1 });
 
           //console.log(CartArr);
           localStorage.setItem("cart", JSON.stringify(CartArr));
-          alert("Product Added To Cart");
+          cartadding.innerText = "Product Added To Cart";
           console.log("login", JSON_flag_signin);
         } else if (duplicate(element) == true) {
-          alert("Product Already in Cart");
+          cartadding.innerText = "Product Already in Cart";
         }
       }
     });
-    div.append(image, name, price, addToCart);
+    div.append(image, name, cartadding, price, addToCart);
     container.append(div);
   });
 }
@@ -168,7 +169,7 @@ function DisplayBeverage(data) {
     let name = document.createElement("h2");
     let image = document.createElement("img");
     let price = document.createElement("h2");
-
+    let cartadding = document.createElement("h2");
     let addToCart = document.createElement("button");
     name.innerText = element.name;
     image.setAttribute("src", element.image);
@@ -176,22 +177,22 @@ function DisplayBeverage(data) {
 
     addToCart.innerText = "Add to Cart";
     addToCart.addEventListener("click", () => {
-      if (JSON_flag_signin === null) {
-        alert("Please Log in First");
+      if (JSON_flag_signin == false) {
+        cartadding.innerText = "Please Log in First";
       } else {
         if (duplicate(element) == false) {
           CartArr.push({ ...element, quantity: 1 });
 
           //console.log(CartArr);
           localStorage.setItem("cart", JSON.stringify(CartArr));
-          alert("Product Added To Cart");
+          cartadding.innerText = "Product Added To Cart";
           console.log("login", JSON_flag_signin);
         } else if (duplicate(element) == true) {
-          alert("Product Already in Cart");
+          cartadding.innerText = "Product Already in Cart";
         }
       }
     });
-    div.append(image, name, price, addToCart);
+    div.append(image, name, cartadding, price, addToCart);
     Bevragecontainer.append(div);
   });
 }
@@ -218,30 +219,30 @@ function Displaydesserts(data) {
     let name = document.createElement("h2");
     let image = document.createElement("img");
     let price = document.createElement("h2");
-
+    let cartadding = document.createElement("h2");
     let addToCart = document.createElement("button");
     name.innerText = element.name;
     image.setAttribute("src", element.image);
     price.innerText = `Price:  ₹${element.price}`;
 
-    addToCart.innerText = "Add to Cart";
+    addToCart.innerText = "ORDER NOW";
     addToCart.addEventListener("click", () => {
-      if (JSON_flag_signin === null) {
-        alert("Please Log in First");
+      if (JSON_flag_signin == false) {
+        cartadding.innerText = "Please Log in First";
       } else {
         if (duplicate(element) == false) {
           CartArr.push({ ...element, quantity: 1 });
 
           //console.log(CartArr);
           localStorage.setItem("cart", JSON.stringify(CartArr));
-          alert("Product Added To Cart");
+          cartadding.innerText = "Product Added To Cart";
           console.log("login", JSON_flag_signin);
         } else if (duplicate(element) == true) {
-          alert("Product Already in Cart");
+          cartadding.innerText = "Product Already in Cart";
         }
       }
     });
-    div.append(image, name, price, addToCart);
+    div.append(image, name, cartadding, price, addToCart);
     dessertscontainer.append(div);
   });
 }
@@ -268,7 +269,7 @@ function DisplaySides(data) {
     let name = document.createElement("h2");
     let image = document.createElement("img");
     let price = document.createElement("h2");
-
+    let cartadding = document.createElement("h2");
     let addToCart = document.createElement("button");
     name.innerText = element.name;
     image.setAttribute("src", element.image);
@@ -276,22 +277,23 @@ function DisplaySides(data) {
 
     addToCart.innerText = "Add to Cart";
     addToCart.addEventListener("click", () => {
-      if (JSON_flag_signin === null) {
-        alert("Please Log in First");
+      console.log("here I am", JSON_flag_signin);
+      if (JSON_flag_signin == false) {
+        cartadding.innerText = "Please Log in First";
       } else {
         if (duplicate(element) == false) {
           CartArr.push({ ...element, quantity: 1 });
 
           //console.log(CartArr);
           localStorage.setItem("cart", JSON.stringify(CartArr));
-          alert("Product Added To Cart");
+          cartadding.innerText = "Product Added To Cart";
           console.log("login", JSON_flag_signin);
         } else if (duplicate(element) == true) {
-          alert("Product Already in Cart");
+          cartadding.innerText = "Product Already in Cart";
         }
       }
     });
-    div.append(image, name, price, addToCart);
+    div.append(image, name, cartadding, price, addToCart);
     Sidescontainer.append(div);
   });
 }
@@ -304,3 +306,26 @@ if (JSON_flag_signin == true) {
   console.log(login_name);
   sign_in_icon.innerText = "Hi,  " + login_name;
 }
+
+let signin = document.getElementById("sign-in");
+let signout = document.getElementById("signout");
+if (JSON_flag_signin == true) {
+  signout.innerText = "Sign Out";
+  signin.style.fontSize = "14px";
+  signout.addEventListener("click", () => {
+    JSON_flag_signin = false;
+    login_name = "";
+  });
+}
+
+if (JSON_flag_signin != true) {
+  console.log(signout.innerText);
+  signout.style.backgroundColor = "rgb(0, 100, 145)";
+}
+signout.addEventListener("click", () => {
+  JSON_flag_signin = false;
+  login_name = "";
+  localStorage.setItem("login_flag", JSON.stringify(JSON_flag_signin));
+  localStorage.setItem("login_name", JSON.stringify(login_name));
+  window.location.href = "index.html";
+});
