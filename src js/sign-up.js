@@ -4,6 +4,7 @@ let lastNameInput = document.getElementById("last_name");
 let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
 let signup_successful = document.getElementById("signup_successful");
+
 let flag1 = true;
 let signup_arr = JSON.parse(localStorage.getItem("signup_details")) || [];
 console.log(signup_arr);

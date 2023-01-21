@@ -5,6 +5,8 @@ let apidesserts = "https://63c82c4b075b3f3a91dbcb90.mockapi.io/Sides";
 
 let fetchdata = {};
 let fetchBevragedata = {};
+let fetchSidesdata = {};
+let fetchdessertsdata = {};
 
 let CartArr = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -62,8 +64,13 @@ async function asyncfetch() {
     let request = await fetch(api);
     let data = await request.json();
     fetchdata = data;
-    //console.log(fetchdata)
+    fetchdatastore = fetchdata;
+    console.log(fetchdata);
+    localStorage.setItem("fetchdatastore", JSON.stringify(fetchdatastore));
+
+    //if (search_value == "") {
     Display(fetchdata);
+    //}
   } catch (error) {
     console.log(error);
   }
@@ -155,7 +162,12 @@ async function asyncfetchbevrage() {
     let request = await fetch(api2);
     let data = await request.json();
     fetchBevragedata = data;
+    fetchdatabevragestore = fetchBevragedata;
     //console.log(fetchdata)
+    localStorage.setItem(
+      "fetchdatabevragestore",
+      JSON.stringify(fetchdatabevragestore)
+    );
     DisplayBeverage(fetchBevragedata);
   } catch (error) {
     console.log(error);
@@ -205,7 +217,12 @@ async function asyncfetchdesserts() {
     let request = await fetch(apidesserts);
     let data = await request.json();
     fetchdessertsdata = data;
+    fetchdatadessertsstore = fetchdessertsdata;
     //console.log(fetchdata)
+    localStorage.setItem(
+      "fetchdatadessertsstore",
+      JSON.stringify(fetchdatadessertsstore)
+    );
     Displaydesserts(fetchdessertsdata);
   } catch (error) {
     console.log(error);
@@ -255,7 +272,12 @@ async function asyncfetchSides() {
     let request = await fetch(apiSides);
     let data = await request.json();
     fetchSidesdata = data;
+    fetchdatasidesstore = fetchSidesdata;
     //console.log(fetchdata)
+    localStorage.setItem(
+      "fetchdatasidesstore",
+      JSON.stringify(fetchdatasidesstore)
+    );
     DisplaySides(fetchSidesdata);
   } catch (error) {
     console.log(error);
@@ -300,7 +322,7 @@ function DisplaySides(data) {
 
 let login_name = JSON.parse(localStorage.getItem("login_name")) || [];
 
-console.log(JSON_flag_signin, login_name);
+//console.log(JSON_flag_signin, login_name);
 let sign_in_icon = document.getElementById("sign-in");
 if (JSON_flag_signin == true) {
   console.log(login_name);
@@ -319,7 +341,7 @@ if (JSON_flag_signin == true) {
 }
 
 if (JSON_flag_signin != true) {
-  console.log(signout.innerText);
+  //console.log(signout.innerText);
   signout.style.backgroundColor = "rgb(0, 100, 145)";
 }
 signout.addEventListener("click", () => {
@@ -329,3 +351,106 @@ signout.addEventListener("click", () => {
   localStorage.setItem("login_name", JSON.stringify(login_name));
   window.location.href = "index.html";
 });
+
+let location_input = document.getElementById("location_input");
+let location_btn = document.getElementById("location_btn");
+
+location_btn.addEventListener("click", () => {
+  console.log(location_input.value);
+  search(
+    location_input.value,
+    fetchdata,
+    fetchBevragedata,
+    fetchSidesdata,
+    fetchdessertsdata
+  );
+  console.log(fetchdata);
+});
+
+let fetchdatastore = JSON.parse(localStorage.getItem("fetchdatastore")) || [];
+let fetchdatabevragestore =
+  JSON.parse(localStorage.getItem("fetchdatabevragestore")) || [];
+let fetchdatasidesstore =
+  JSON.parse(localStorage.getItem("fetchdatasidesstore")) || [];
+let fetchdatadessertsstore =
+  JSON.parse(localStorage.getItem("fetchdatadessertsstore")) || [];
+
+let search_value = JSON.parse(localStorage.getItem("search"));
+if (search_value != "") {
+  console.log(search_value);
+  console.log(fetchdatastore);
+
+  search(
+    search_value,
+    fetchdatastore,
+    fetchdatabevragestore,
+    fetchdatasidesstore,
+    fetchdatadessertsstore
+  );
+
+  localStorage.setItem("search", JSON.stringify(search_value));
+}
+function search(
+  searchvalues,
+  fetchdata,
+  fetchBevragedata,
+  fetchSidesdata,
+  fetchdessertsdata
+) {
+  fetchDatafull1 = fetchdata.filter(function (el) {
+    if (el.name.toUpperCase().includes(searchvalues.toUpperCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(fetchDatafull1);
+  Display(fetchDatafull1);
+
+  fetchDatafullBeverage1 = fetchBevragedata.filter(function (el) {
+    if (el.name.toUpperCase().includes(searchvalues.toUpperCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(fetchDatafullBeverage1);
+  DisplayBeverage(fetchDatafullBeverage1);
+
+  fetchDatafulldesserts1 = fetchdessertsdata.filter(function (el) {
+    if (el.name.toUpperCase().includes(searchvalues.toUpperCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(fetchDatafulldesserts1);
+  Displaydesserts(fetchDatafulldesserts1);
+
+  fetchDatafullSides1 = fetchSidesdata.filter(function (el) {
+    if (el.name.toUpperCase().includes(searchvalues.toUpperCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(fetchDatafullSides1);
+  DisplaySides(fetchDatafullSides1);
+}
+
+// if (document.location.reload == true) {
+//   search_value = "";
+//   Display(fetchdata);
+//   console.log("reload true");
+// }
+// setTimeout(() => {
+//   console.log(search_value);
+//   window.onload = myfunction();
+// }, 5000);
+
+// function myfunction() {
+//   search_value.value = "";
+//   console.log("reload true");
+//   console.log(search_value);
+//   localStorage.setItem("search", JSON.stringify(search_value));
+// }

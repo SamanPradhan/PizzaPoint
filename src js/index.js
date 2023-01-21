@@ -60,3 +60,20 @@ signout.addEventListener("click", () => {
   localStorage.setItem("login_name", JSON.stringify(login_name));
   window.location.href = "index.html";
 });
+
+// let fetchdata = {};
+// let fetchBevragedata = {};
+// let fetchSidesdata = {};
+// let fetchdessertsdata = {};
+
+let location_input = document.getElementById("location_input");
+let location_btn = document.getElementById("location_btn");
+
+let search_value = JSON.parse(localStorage.getItem("search"));
+
+location_btn.addEventListener("click", () => {
+  search_value = location_input.value;
+  window.location.href = "menu.html";
+
+  localStorage.setItem("search", JSON.stringify(search_value));
+});
