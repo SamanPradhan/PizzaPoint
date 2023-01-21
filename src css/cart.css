@@ -5,238 +5,6 @@ body {
   padding: 5px 150px 5px 150px;
 }
 
-#nav {
-  display: flex;
-  height: 90px;
-  background-color: rgb(0, 100, 145);
-  /* padding: 5px 170px 5px 170px; */
-  align-items: center;
-  justify-content: center;
-  margin: -8px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-#nav {
-  position: fixed;
-  width: 100%;
-}
-#logo-img {
-  width: 70px;
-  height: 85px;
-}
-
-#menu > h2 {
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  display: flex;
-  font-size: 15px;
-
-  padding: 0.75rem 0.625rem;
-  cursor: pointer;
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-  align-self: center;
-  height: 65px;
-}
-
-#menu > h2:hover,
-#location:hover,
-#cart:hover {
-  background-color: rgb(0, 63, 92);
-}
-
-#location {
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 12px;
-
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-  align-self: center;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 0.25rem;
-  display: flex;
-  margin: 0px 1rem;
-  padding: 0px 10px 0px 10px;
-}
-
-#sign-in {
-  width: 100px;
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  background-color: rgb(1, 89, 129);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 12px;
-  margin: 0px;
-  transition: box-shadow 0.3s linear 0s;
-  text-align: center;
-  padding: 15px 30px 15px 30px;
-}
-
-#cart {
-  opacity: 1;
-  border-radius: 3px;
-  -webkit-box-pack: center;
-  display: flex;
-  justify-content: center;
-  line-height: 0px;
-  height: 90px;
-  width: 70px;
-  text-decoration: none;
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-
-  background: transparent;
-
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 12px;
-  text-transform: uppercase;
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-
-  position: relative;
-  flex-direction: column;
-}
-
-#menu {
-  display: flex;
-}
-
-#location {
-  display: flex;
-}
-
-#location-icon,
-#cart-icon {
-  width: 30px;
-  height: 30px;
-}
-
-#menu > h2 {
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  display: flex;
-  font-size: 15px;
-
-  padding: 0.75rem 0.625rem;
-  cursor: pointer;
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-  align-self: center;
-  height: 65px;
-}
-
-#menu > h2:hover,
-#location:hover,
-#cart:hover {
-  background-color: rgb(0, 63, 92);
-}
-
-#location {
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 12px;
-
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-  align-self: center;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 0.25rem;
-  display: flex;
-  margin: 0px 1rem;
-  padding: 0px 10px 0px 10px;
-}
-
-#sign-in {
-  width: 60px;
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-
-  background: transparent;
-  background-color: rgb(1, 89, 129);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 9px;
-  margin: 0px;
-  text-align: center;
-  padding: 15px 20px 15px 20px;
-}
-
-#signout {
-  width: 50px;
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  background-color: rgb(1, 89, 129);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 14px;
-  margin: 0px;
-  transition: box-shadow 0.3s linear 0s;
-  text-align: center;
-  padding: 15px 20px 15px 20px;
-}
-
-#cart {
-  opacity: 1;
-  border-radius: 3px;
-  -webkit-box-pack: center;
-  display: flex;
-  justify-content: center;
-  line-height: 0px;
-  height: 90px;
-  width: 70px;
-  text-decoration: none;
-  font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
-    sans-serif;
-
-  background: transparent;
-
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 12px;
-  text-transform: uppercase;
-  transition: box-shadow 0.3s linear 0s;
-  -webkit-box-align: center;
-  align-items: center;
-
-  position: relative;
-  flex-direction: column;
-}
-
-#menu {
-  display: flex;
-}
-
-#location {
-  display: flex;
-}
-
-#location-icon,
-#cart-icon {
-  width: 30px;
-  height: 30px;
-}
-
 #footer2 > p {
   font-family: "One Dot Condensed Bold", "Arial Narrow", Arial, Helvetica,
     sans-serif;
@@ -347,19 +115,22 @@ body {
 }
 
 #total {
-  font-family: One Dot Condensed Bold, Arial Narrow, Arial, Helvetica,
-    sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  color: rgb(31, 31, 31);
+  color: rgb(51, 51, 51);
   font-size: 1.8em;
   line-height: 1;
   margin: 0 0 0.25em;
   padding-top: 0.25em;
 
   outline: 0;
-
-  padding: 20px 105px 20px 105px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  padding: 20px 105px 0px 105px;
+}
+#tax_line {
+  padding-left: 110px;
+  margin-top: 0px;
+  font-size: 20px;
+  color: rgb(51, 85, 0);
 }
 
 #cart_container {
@@ -387,14 +158,17 @@ tbody > tr > :nth-child(4) {
 tbody > tr > :nth-child(5) {
   width: 100px;
   font-size: 40px;
+  cursor: pointer;
 }
 tbody > tr > :nth-child(6) {
   width: 150px;
   font-size: 20px;
+  cursor: pointer;
 }
 tbody > tr > :nth-child(7) {
   width: 100px;
   font-size: 40px;
+  cursor: pointer;
 }
 tbody > tr > :nth-child(4) {
   width: 100px;
@@ -501,4 +275,142 @@ table th {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+@media only screen and (max-width: 600px) {
+  #footer1,
+  #footer2 {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  #cont {
+    width: 800px;
+    height: 80px;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  #total {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+  }
+  #tax_line {
+    font-size: 20px;
+    padding: 0px;
+    margin-top: 20px;
+  }
+
+  tbody > tr > :nth-child(1) {
+    width: 100px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(2) {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  tbody > tr > :nth-child(3) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(5) {
+    width: 25px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(6) {
+    width: 60px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(7) {
+    width: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 30px;
+  }
+  table > tbody tr {
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #footer1,
+  #footer2 {
+    display: none;
+  }
+  #nav {
+    display: none;
+  }
+  #cont {
+    width: 800px;
+    height: 80px;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  #total {
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+  }
+  #tax_line {
+    font-size: 20px;
+    padding: 0px;
+    margin-top: 20px;
+  }
+
+  tbody > tr > :nth-child(1) {
+    width: 100px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(2) {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  tbody > tr > :nth-child(3) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(5) {
+    width: 25px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(6) {
+    width: 60px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(7) {
+    width: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 30px;
+  }
+  table > tbody tr {
+    height: 70px;
+  }
 }

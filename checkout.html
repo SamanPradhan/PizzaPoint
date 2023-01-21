@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="src css/checkout.css">
+    <link rel="stylesheet" href="src css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -14,17 +15,14 @@
     <div id="nav">
         <img onclick="window.location.href='index.html';" id="logo-img" src="images/logo.png" alt="logo">
         <div id="menu">
-            <h2 onclick="window.location.href='menu.html';">ORDER ONLINE</h2>
+
             <h2 onclick="window.location.href='menu.html';">MENU</h2>
-            <h2>COUPONS</h2>
-            <h2>TRACKER</h2>
-            <h2>REWARDS</h2>
+
         </div>
         <div id="location">
-            <img onclick="window.location.href='menu.html';" id="location-icon" src="images/location.png"
-                alt="location">
-            <h3> VIEW YOUR LOCAL PIZZA TOWN</h3>
 
+            <input id="location_input" placeholder="search by name"> </h3>
+            <button onclick="window.location.href='menu.html';" id="location_btn">Search</button>
         </div>
         <div onclick="window.location.href='log-in.html';" id="sign-in">
             <h1>LOG IN </h1>
@@ -45,17 +43,18 @@
         <form>
             <h1>CHECKOUT</h1>
             <label>Address</label>
-            <input type="text">
+            <input id="adress" type="text">
             <label>Card Number</label>
-            <input type="number">
+            <input id="card_number" type="number">
             <label>Cardholder Name</label>
-            <input type="text">
+            <input id="Name" type="text">
             <label>Expiry Date</label>
-            <input type="date">
+            <input id="Expiry_Date" type="date">
             <label>CVV</label>
-            <input type="number">
+            <input id="CVV" type="number">
+            <h2 id="checkout_successful"></h2>
             <div id="confirm-div">
-                <button onclick="window.location.href='finalpage.html';" id="confirm-button">Confirm Payment</button>
+                <button id="confirm-button">Confirm Payment</button>
             </div>
         </form>
 

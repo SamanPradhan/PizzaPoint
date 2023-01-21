@@ -3,6 +3,17 @@ console.log(CartArr);
 let tbody = document.querySelector("tbody");
 
 let total = document.getElementById("cart-total");
+
+
+  
+let location_input = document.getElementById("location_input");
+location_input.addEventListener("change", ()=>{
+  window.location.href = "menu.html";
+})
+
+
+
+
 Display(CartArr);
 
 function Display(CartArr) {
@@ -52,7 +63,7 @@ function Display(CartArr) {
         qnt.innerText = element.quantity;
         localStorage.setItem("cart", JSON.stringify(CartArr));
       } else {
-        //alert("This is the last Product");
+        alert("This is the last Product");
         localStorage.setItem("cart", JSON.stringify(CartArr));
         Display(data);
       }

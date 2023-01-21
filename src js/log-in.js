@@ -2,6 +2,11 @@ let signup_arr = JSON.parse(localStorage.getItem("signup_details")) || [];
 let JSON_flag_signin = JSON.parse(localStorage.getItem("login_flag")) || [];
 let login_name = JSON.parse(localStorage.getItem("login_name")) || [];
 
+let location_input = document.getElementById("location_input");
+location_input.addEventListener("change", () => {
+  window.location.href = "menu.html";
+});
+
 console.log(signup_arr);
 let flag_signin = false;
 let form = document.getElementById("login-form");

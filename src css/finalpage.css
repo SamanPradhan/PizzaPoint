@@ -1,11 +1,23 @@
 #thankyou_text {
   font-size: 80px;
-  color: rgb(175, 0, 38);
+  color: rgb(227, 24, 55);
   text-align: center;
 }
 #orderconfirm_text {
   font-size: 50px;
   text-align: center;
+}
+#shop_again {
+  font-size: 20px;
+  color: rgb(227, 24, 55);
+  text-align: center;
+}
+#shop_again:hover {
+  font-style: underline;
+  cursor: pointer;
+  background-color: rgb(227, 24, 55);
+  color: white;
+  border-radius: 5px;
 }
 body {
   background-color: rgb(255, 215, 215);
