@@ -348,6 +348,7 @@ signout.addEventListener("click", () => {
   JSON_flag_signin = false;
   login_name = "";
   CartArr = [];
+  localStorage.setItem("cart", JSON.stringify(CartArr));
   localStorage.setItem("login_flag", JSON.stringify(JSON_flag_signin));
   localStorage.setItem("login_name", JSON.stringify(login_name));
   localStorage.setItem("cart", JSON.stringify(CartArr));
