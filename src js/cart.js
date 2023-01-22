@@ -4,17 +4,10 @@ let tbody = document.querySelector("tbody");
 
 let total = document.getElementById("cart-total");
 
-
-  
 let location_input = document.getElementById("location_input");
-location_input.addEventListener("change", ()=>{
+location_input.addEventListener("change", () => {
   window.location.href = "menu.html";
-})
-
-
-
-
-Display(CartArr);
+});
 
 function Display(CartArr) {
   tbody.innerHTML = null;
@@ -82,6 +75,10 @@ function Display(CartArr) {
 
 let JSON_flag_signin = JSON.parse(localStorage.getItem("login_flag")) || [];
 let login_name = JSON.parse(localStorage.getItem("login_name")) || [];
+
+if (JSON_flag_signin == true) {
+  Display(CartArr);
+}
 
 console.log(JSON_flag_signin, login_name);
 let sign_in_icon = document.getElementById("sign-in");
