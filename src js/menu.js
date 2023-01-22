@@ -64,9 +64,9 @@ async function asyncfetch() {
     let request = await fetch(api);
     let data = await request.json();
     fetchdata = data;
-    fetchdatastore = fetchdata;
-    console.log(fetchdata);
-    localStorage.setItem("fetchdatastore", JSON.stringify(fetchdatastore));
+    // fetchdatastore = fetchdata;
+    // console.log(fetchdata);
+    // localStorage.setItem("fetchdatastore", JSON.stringify(fetchdatastore));
 
     //if (search_value == "") {
     Display(fetchdata);
@@ -147,7 +147,7 @@ function Display(data) {
 
 function duplicate(product) {
   for (let i = 0; i < CartArr.length; i++) {
-    if (CartArr[i].id == product.id) {
+    if (CartArr[i].name == product.name) {
       return true;
     }
   }
@@ -162,12 +162,12 @@ async function asyncfetchbevrage() {
     let request = await fetch(api2);
     let data = await request.json();
     fetchBevragedata = data;
-    fetchdatabevragestore = fetchBevragedata;
-    //console.log(fetchdata)
-    localStorage.setItem(
-      "fetchdatabevragestore",
-      JSON.stringify(fetchdatabevragestore)
-    );
+    // fetchdatabevragestore = fetchBevragedata;
+    // //console.log(fetchdata)
+    // localStorage.setItem(
+    //   "fetchdatabevragestore",
+    //   JSON.stringify(fetchdatabevragestore)
+    // );
     DisplayBeverage(fetchBevragedata);
   } catch (error) {
     console.log(error);
@@ -217,12 +217,12 @@ async function asyncfetchdesserts() {
     let request = await fetch(apidesserts);
     let data = await request.json();
     fetchdessertsdata = data;
-    fetchdatadessertsstore = fetchdessertsdata;
+    //fetchdatadessertsstore = fetchdessertsdata;
     //console.log(fetchdata)
-    localStorage.setItem(
-      "fetchdatadessertsstore",
-      JSON.stringify(fetchdatadessertsstore)
-    );
+    // localStorage.setItem(
+    //   "fetchdatadessertsstore",
+    //   JSON.stringify(fetchdatadessertsstore)
+    // );
     Displaydesserts(fetchdessertsdata);
   } catch (error) {
     console.log(error);
@@ -274,10 +274,10 @@ async function asyncfetchSides() {
     fetchSidesdata = data;
     fetchdatasidesstore = fetchSidesdata;
     //console.log(fetchdata)
-    localStorage.setItem(
-      "fetchdatasidesstore",
-      JSON.stringify(fetchdatasidesstore)
-    );
+    // localStorage.setItem(
+    //   "fetchdatasidesstore",
+    //   JSON.stringify(fetchdatasidesstore)
+    // );
     DisplaySides(fetchSidesdata);
   } catch (error) {
     console.log(error);
@@ -347,8 +347,10 @@ if (JSON_flag_signin != true) {
 signout.addEventListener("click", () => {
   JSON_flag_signin = false;
   login_name = "";
+  CartArr = [];
   localStorage.setItem("login_flag", JSON.stringify(JSON_flag_signin));
   localStorage.setItem("login_name", JSON.stringify(login_name));
+  localStorage.setItem("cart", JSON.stringify(CartArr));
   window.location.href = "index.html";
 });
 
@@ -357,46 +359,11 @@ let location_btn = document.getElementById("location_btn");
 
 location_btn.addEventListener("click", () => {
   console.log(location_input.value);
-  search(
-    location_input.value,
-    fetchdata,
-    fetchBevragedata,
-    fetchSidesdata,
-    fetchdessertsdata
-  );
+  search(location_input.value);
   console.log(fetchdata);
 });
 
-let fetchdatastore = JSON.parse(localStorage.getItem("fetchdatastore")) || [];
-let fetchdatabevragestore =
-  JSON.parse(localStorage.getItem("fetchdatabevragestore")) || [];
-let fetchdatasidesstore =
-  JSON.parse(localStorage.getItem("fetchdatasidesstore")) || [];
-let fetchdatadessertsstore =
-  JSON.parse(localStorage.getItem("fetchdatadessertsstore")) || [];
-
-let search_value = JSON.parse(localStorage.getItem("search"));
-if (search_value != "") {
-  console.log(search_value);
-  console.log(fetchdatastore);
-
-  search(
-    search_value,
-    fetchdatastore,
-    fetchdatabevragestore,
-    fetchdatasidesstore,
-    fetchdatadessertsstore
-  );
-
-  localStorage.setItem("search", JSON.stringify(search_value));
-}
-function search(
-  searchvalues,
-  fetchdata,
-  fetchBevragedata,
-  fetchSidesdata,
-  fetchdessertsdata
-) {
+function search(searchvalues) {
   fetchDatafull1 = fetchdata.filter(function (el) {
     if (el.name.toUpperCase().includes(searchvalues.toUpperCase())) {
       return true;
@@ -437,6 +404,30 @@ function search(
   console.log(fetchDatafullSides1);
   DisplaySides(fetchDatafullSides1);
 }
+
+// let fetchdatastore = JSON.parse(localStorage.getItem("fetchdatastore")) || [];
+// let fetchdatabevragestore =
+//   JSON.parse(localStorage.getItem("fetchdatabevragestore")) || [];
+// let fetchdatasidesstore =
+//   JSON.parse(localStorage.getItem("fetchdatasidesstore")) || [];
+// let fetchdatadessertsstore =
+//   JSON.parse(localStorage.getItem("fetchdatadessertsstore")) || [];
+
+// let search_value = JSON.parse(localStorage.getItem("search"));
+// if (search_value != "") {
+//   console.log(search_value);
+//   console.log(fetchdatastore);
+
+//   // search(
+//   //   search_value,
+//   //   fetchdatastore,
+//   //   fetchdatabevragestore,
+//   //   fetchdatasidesstore,
+//   //   fetchdatadessertsstore
+//   // );
+
+//   localStorage.setItem("search", JSON.stringify(search_value));
+// }
 
 // if (document.location.reload == true) {
 //   search_value = "";
